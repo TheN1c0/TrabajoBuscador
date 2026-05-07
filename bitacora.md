@@ -57,3 +57,11 @@ npm i @prisma/client
 npx prisma init
 ```
 Posteriormente, se configuró el esquema de base de datos en `prisma/schema.prisma` agregando el modelo `Oferta` para almacenar los datos extraídos (título, portal, url, fecha, correo extraído) y evitar enviar alertas duplicadas.
+
+---
+**ESTADO:** En progreso (Fase 3).
+
+## Fase 3: Módulos de Scraping
+
+### 1. Extractor Base (Playwright)
+Se creó la interfaz y clase abstracta base en `src/scraper/BaseScraper.ts`. Esta clase maneja la inicialización del navegador con Playwright, el cierre, y contiene una función común para extraer correos electrónicos de cualquier texto utilizando expresiones regulares.
