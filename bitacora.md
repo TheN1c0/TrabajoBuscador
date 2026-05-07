@@ -30,4 +30,15 @@ test-results/
 Se creó este archivo `bitacora.md` para llevar el registro del proyecto.
 
 ---
-**ESTADO:** Esperando luz verde para continuar con la Fase 2 (Inicialización de Node, Docker y Base de datos).
+**ESTADO:** En progreso (Fase 2).
+
+## Fase 2: Entorno y Base de Datos
+
+### 1. Inicialización de Node.js y TypeScript
+Se inicializó el proyecto Node.js, se instalaron las dependencias principales (Playwright, Nodemailer, node-cron, dotenv) y se configuró TypeScript:
+```powershell
+npm init -y
+npm i playwright nodemailer node-cron dotenv
+npm i -D typescript @types/node tsx @types/nodemailer @types/node-cron
+npx tsc --init
+```
