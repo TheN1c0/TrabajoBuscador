@@ -65,3 +65,6 @@ Posteriormente, se configuró el esquema de base de datos en `prisma/schema.pris
 
 ### 1. Extractor Base (Playwright)
 Se creó la interfaz y clase abstracta base en `src/scraper/BaseScraper.ts`. Esta clase maneja la inicialización del navegador con Playwright, el cierre, y contiene una función común para extraer correos electrónicos de cualquier texto utilizando expresiones regulares.
+
+### 2. Extractor para Portales Bancarios (Trabajando)
+Se creó `src/scraper/TrabajandoScraper.ts`, que hereda de `BaseScraper`. Esta clase navega a la URL configurada (ej. portales de Banco de Chile, BCI), extrae las ofertas que contengan la palabra "Cajero", visita el detalle de la oferta para extraer un correo (si aplica) y filtra aquellas que tengan una antigüedad de publicación mayor a 3 días.
