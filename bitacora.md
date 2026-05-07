@@ -48,3 +48,12 @@ Se crearon los archivos `Dockerfile` y `docker-compose.yml` para contenerizar la
 - **Dockerfile:** Usa la imagen `mcr.microsoft.com/playwright:v1.43.0-jammy` como base para asegurar que Playwright funcione correctamente.
 - **docker-compose.yml:** Define los servicios `app` y `db` (PostgreSQL 15), con su respectivo volumen y variables de entorno.
 - Se agregaron los scripts `dev`, `build` y `start` en el `package.json`.
+
+### 3. Configuración de Prisma ORM
+Se instaló Prisma y su cliente, y se inicializó la configuración:
+```powershell
+npm i -D prisma
+npm i @prisma/client
+npx prisma init
+```
+Posteriormente, se configuró el esquema de base de datos en `prisma/schema.prisma` agregando el modelo `Oferta` para almacenar los datos extraídos (título, portal, url, fecha, correo extraído) y evitar enviar alertas duplicadas.

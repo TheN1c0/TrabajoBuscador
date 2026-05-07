@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^6.19.3",
     "dotenv": "^17.4.2",
     "node-cron": "^4.2.1",
     "nodemailer": "^8.0.7",
@@ -22,6 +23,7 @@
     "@types/node": "^25.6.0",
     "@types/node-cron": "^3.0.11",
     "@types/nodemailer": "^8.0.0",
+    "prisma": "^6.19.3",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"
   }
