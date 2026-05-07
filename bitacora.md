@@ -42,3 +42,9 @@ npm i playwright nodemailer node-cron dotenv
 npm i -D typescript @types/node tsx @types/nodemailer @types/node-cron
 npx tsc --init
 ```
+
+### 2. Configuración de Docker
+Se crearon los archivos `Dockerfile` y `docker-compose.yml` para contenerizar la aplicación Node.js junto con una base de datos PostgreSQL:
+- **Dockerfile:** Usa la imagen `mcr.microsoft.com/playwright:v1.43.0-jammy` como base para asegurar que Playwright funcione correctamente.
+- **docker-compose.yml:** Define los servicios `app` y `db` (PostgreSQL 15), con su respectivo volumen y variables de entorno.
+- Se agregaron los scripts `dev`, `build` y `start` en el `package.json`.

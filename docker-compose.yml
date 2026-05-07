@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: buscador_cajeros_app
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/buscador_db
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+    depends_on:
+      - db
+    volumes:
+      - ./src:/app/src
+
+  db:
+    image: postgres:15-alpine
+    container_name: buscador_cajeros_db
+    restart: always
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=buscador_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
