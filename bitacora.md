@@ -68,3 +68,14 @@ Se creó la interfaz y clase abstracta base en `src/scraper/BaseScraper.ts`. Est
 
 ### 2. Extractor para Portales Bancarios (Trabajando)
 Se creó `src/scraper/TrabajandoScraper.ts`, que hereda de `BaseScraper`. Esta clase navega a la URL configurada (ej. portales de Banco de Chile, BCI), extrae las ofertas que contengan la palabra "Cajero", visita el detalle de la oferta para extraer un correo (si aplica) y filtra aquellas que tengan una antigüedad de publicación mayor a 3 días.
+
+---
+**ESTADO:** Completado.
+
+## Fase 4: Módulo de Notificaciones y Orquestador
+
+### 1. Configuración de Nodemailer
+Se creó `src/mailer/Mailer.ts` para conectar con el servicio SMTP (Gmail) y enviar correos HTML formateados con la lista de trabajos encontrados y los correos extraídos para postulación.
+
+### 2. Orquestador y Cron
+Se creó `src/index.ts` que sirve como el entrypoint del programa. Instancia los scrapers, consulta la base de datos de Prisma para descartar duplicados, guarda las nuevas ofertas y, en caso de haber hallazgos, envía el correo. Utiliza `node-cron` para ejecutarse diariamente a las 08:00, 15:00 y 20:00 hrs.
